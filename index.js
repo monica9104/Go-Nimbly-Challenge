@@ -63,6 +63,10 @@ server.get('/', async (req, res) => {
   }
 });
 
-server.listen(4242, () => {
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 4242;
+}
+server.listen(port, () => {
   console.log('Express Server is running...');
 });
