@@ -1,0 +1,12 @@
+How does it work
+
+This app just takes a string (the one you should enter in the search bar on the UI),
+makes a request to https://www.metaweather.com/api/location/ in order to get the first location that matches your search text
+and after that, it makes another request to https://www.metaweather.com/api/location/ in order to get all the weather records for today.
+
+How to run locally
+
+In order to run it locally, you just have to clone the repository to your local machine
+After that, you should run inside the root folder the command npm install to download the used dependencies,
+And finally, just execute the npm start command or just use node index.js (on your local machine the server will use port 4242
+by default)
