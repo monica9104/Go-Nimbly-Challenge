@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+
+    <main>
+        <div class="jumbotron">
+            <h1>Weather results</h1>
+            <p><%= tagline %></p>
+            <form method="post" action="/">
+                <div class="input-group">
+                    <input id="searchText" name="searchText" class="form-control border-end-0 border rounded-pill" type="text" placeholder="Search location" id="example-search-input">
+                    <input class="btn btn-outline-secondary bg-white border-start-0 border rounded-pill ms-n3" type="submit" value="Search">
+                </div>
+
+            </form>
+            <table data-toggle="table" class="table table-striped table-bordered dataTable">
+                <thead>
+                  <tr>
+                    <th>Weather State</th>
+                    <th>Temp</th>
+                    <th>Wind Speed</th>
+                    <th>Humidity</th>
+                    <th>Time</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <% weatherForLocation.forEach(function(weatherState) { %>
+                        <tr>
+                            <td><%= weatherState.weather_state_name %></td>
+                            <td><%= weatherState.the_temp %></td>
+                            <td><%= weatherState.wind_speed %></td>
+                            <td><%= weatherState.humidity %></td>
+                            <td><%= weatherState.created %></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+              </table>
+        </div>
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+</body>
+</html>
